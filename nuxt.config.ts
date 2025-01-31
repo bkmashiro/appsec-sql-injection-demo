@@ -3,12 +3,16 @@ import topLevelAwait from "vite-plugin-top-level-await";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: "2024-11-01",
   devtools: { enabled: true },
 
   vite: {
     plugins: [wasm(), topLevelAwait()],
   },
 
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ["@nuxt/ui", "@nuxt/scripts"],
+  compatibilityDate: "2025-01-31",
+
+  colorMode: {
+    preference: "light",
+  },
 });
