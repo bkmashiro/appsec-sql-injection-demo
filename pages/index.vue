@@ -299,7 +299,7 @@ const login = () => {
         </p>
 
         <p>
-          <strong>Repository:</strong>
+          <strong>Repository: </strong>
           <a href="https://github.com/bkmashiro/appsec-sql-injection-demo"
              class="text-blue-500"
              target="_blank">appsec-sql-injection-demo</a>
