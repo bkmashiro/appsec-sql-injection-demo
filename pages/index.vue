@@ -163,10 +163,14 @@ const login = () => {
 </script>
 
 <template>
+
   <Head>
     <title>SQL Injection Demo</title>
     <Meta name="description"
           content="A live demo of SQL injection vulnerabilities in a controlled environment." />
+
+    <Meta name="Namashiro"
+          content="This is an Easter egg" />
   </Head>
 
   <div class="p-4">
@@ -319,7 +323,8 @@ const login = () => {
       </footer>
     </div>
 
-    <UModal v-model="isOpen" :transition="false">
+    <UModal v-model="isOpen"
+            :transition="false">
       <div class="p-4">
         <p class="font-bold text-2xl"> 🎉 Congras! You've made a SQL injection! </p>
       </div>
