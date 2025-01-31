@@ -2,6 +2,7 @@
 import { ref, onMounted } from "vue";
 import initSqlJs, { type Database } from "sql.js";
 import sqlWasm from "sql.js/dist/sql-wasm.wasm?url";
+import { Head } from "#components";
 
 const { $confetti } = useNuxtApp();
 
@@ -162,6 +163,12 @@ const login = () => {
 </script>
 
 <template>
+  <Head>
+    <title>SQL Injection Demo</title>
+    <Meta name="description"
+          content="A live demo of SQL injection vulnerabilities in a controlled environment." />
+  </Head>
+
   <div class="p-4">
     <div class="md:grid md:grid-cols-2">
       <h1 class="text-2xl font-bold p-4">SQL Injection Live Demo</h1>
