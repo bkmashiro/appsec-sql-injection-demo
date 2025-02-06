@@ -77,12 +77,13 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { xss_examples } from '#imports';
 // 留言相关状态
 const name = ref('');
 const message = ref('');
-const messages = ref([]);
+const messages = ref<any[]>([]);
+const successful_injections = ref<string[]>([]);
 const showCheatSheet = ref(false);
 
 // Cheat Sheet 示例（XSS payload）
@@ -94,12 +95,18 @@ const toggleCheatSheet = () => {
 };
 
 // 将示例 payload 应用到留言文本框中
-const applyPayload = (payload) => {
+const applyPayload = (payload: any) => {
   message.value = payload.payload;
 };
 
 // 从 localStorage 加载留言数据
 onMounted(() => {
+  // we change alert to our dummy function
+  window.alert = function() {
+    successful_injections.value.push(`successful injection at ${new Date().toLocaleString()}`);
+  };
+
+
   const storedMessages = localStorage.getItem('xss_messages');
   if (storedMessages) {
     try {
