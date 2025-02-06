@@ -203,7 +203,7 @@ const login = () => {
             </button>
           </form>
         </div>
-        <button class="mt-2 bg-blue-500 text-white p-2 rounded w-full"
+        <button class="mt-2 bg-blue-500 text-white p-2 rounded w-full "
                 @click="login">
           Login
         </button>
